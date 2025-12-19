@@ -139,8 +139,8 @@ unsigned char f_2m_plus_1(unsigned char *state) {
 	W = state[L-2*kappa];
 	for(i=0;i<m;i++) {sum1 = sum1 + X[i]*Y[m-1-i]; sum2 = sum2+X[i];}
 
-	if (m%2 == 0) th = m/2; else th = 1 + (m-1)/2;
-	if (sum2 >= th) majval = 1; else majval = 0;
+	if (m%2 == 0) th = m/2; else th = (m-1)/2;
+	if (sum2 > th) majval = 1; else majval = 0;
 
 	val = (sum1 + majval + W + 1) %2;
 
