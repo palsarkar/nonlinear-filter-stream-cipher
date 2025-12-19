@@ -147,6 +147,12 @@ unsigned char f_2m_plus_1(unsigned char *state) {
 	return val;
 }
 
+void printStr(unsigned char *str, unsigned int len) {
+
+	unsigned int i;
+	for(i=0;i<len;i++) printf("%u",str[len-1-i]); printf("\n");
+}
+
 int main(unsigned int argc, unsigned char **argv) {
 
 	unsigned int i,j,nbits;
@@ -181,7 +187,7 @@ int main(unsigned int argc, unsigned char **argv) {
 	for(i=0;i<2*kappa;i++) {
 		ksbit = f_2m_plus_1(state);
 		LFSRnextState(state);
-		for(j=0;j<L;j++) state[i] = (state[i]+ksbit*d[i])%2;
+		for(j=0;j<L;j++) state[j] = (state[j]+ksbit*d[j])%2;
 	}
 
 	// keystream generation phase
