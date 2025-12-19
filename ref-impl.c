@@ -162,11 +162,11 @@ int main(unsigned int argc, unsigned char **argv) {
 	if (argc != 3) {printf("Usage %s <key-IV-file> <nbits>\n",argv[0]); exit(1);}
 	fp = (FILE *)fopen(argv[1],"r");
 	if (fp == NULL) {printf("Cannot open %s for reading\n",argv[1]); exit(1);}
-	nbits = (unsigned int) atoi(argv[2]); // number of keystream bits to be generated
-	ksbitstream = (unsigned char *)calloc(nbits,sizeof(unsigned char));
 	// In the key-Iv-file, the first line should have the kappa-bit key, and the second line should have the kappa-bit IV
 	fscanf(fp,"%s\n",key); // read key from file as key[0..kappa-1]
 	fscanf(fp,"%s\n",IV); // read IV from file as IV[0..kappa-1]
+	nbits = (unsigned int) atoi(argv[2]); // number of keystream bits to be generated
+	ksbitstream = (unsigned char *)calloc(nbits,sizeof(unsigned char)); // array to store the generated keystream bits
 
 	for(i=0;i<nLFSRtapPos;i++) c[LFSRtapPos[i]] = 1; // obtain the coefficient vector for LFSR connection polynomial
 	for(i=0;i<mu;i++) d[dpos[i]] = 1; // obtain the feedback positions for the initialisation round function
