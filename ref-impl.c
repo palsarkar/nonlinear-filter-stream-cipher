@@ -1,4 +1,5 @@
 // Reference implementation of the concrete stream cipher proposals put forward as part of https://eprint.iacr.org/2025/160 and https://arxiv.org/abs/2502.01110
+// The shell file S-L-m.sh compiles with the different options to create the images corresponding to the different stream cipher proposals
 // Written by Palash Sarkar
 
 
