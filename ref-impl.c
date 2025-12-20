@@ -1,3 +1,7 @@
+// Reference implementation of the concrete stream cipher proposals put forward as part of https://eprint.iacr.org/2025/160 and https://arxiv.org/abs/2502.01110
+// Written by Palash Sarkar
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
